@@ -10,6 +10,14 @@
   <body>
     <a-scene>
 
+      <a-assets>
+        <a-mixin id="red" material="color: red"></a-mixin>
+        <a-mixin id="blue" material="color: blue"></a-mixin>
+        <a-mixin id="green" material="color: green"></a-mixin>
+        <a-mixin id="cube0_5" geometry="primitive: box; width: 0.5; height: 0.5; depth: 0.5"></a-mixin>
+        <a-mixin id="cube1" geometry="primitive: box; width: 1; height: 1; depth: 1"></a-mixin>
+      </a-assets>
+
       <a-entity id="floor1"
                 geometry="primitive: plane; height: 20; width: 20"
                 position="0 0 0"
@@ -23,6 +31,7 @@
                 material="side: double; color: #CEC504"
                 rotation="0 0 0"
                 ></a-entity>
+
       <a-entity id="backwall-right"
                 geometry="primitive: plane; height: 20; width: 10"
                 position="5 10 -10"
@@ -31,23 +40,49 @@
                 ></a-entity>
 
       <a-entity id="box1"
-                geometry="primitive: box; width: 0.5; height: 0.5; depth: 0.5"
+                mixin="cube0_5"
                 material="color: #E65502; shader: flat"
                 position="-1 0.5 0"
-                rotation="0 0 0"
-                ></a-entity>
-      <a-entity id="box1"
-                geometry="primitive: box; width: 1; height: 1; depth: 1"
+                rotation="0 0 0">
+                <a-animation  attribute="rotation"
+                              dur="4000"
+                              begin="0"
+                              ease="ease-in-out"
+                              fill="forwards"
+                              to="0 360 360"
+                              repeat="indefinite">
+                </a-animation>
+      </a-entity>
+
+      <a-entity id="box2"
+                mixin="cube0_5"
                 material="color: #E65562; shader: flat"
                 position="0 1 0"
-                rotation="0 0 0"
-                ></a-entity>
-      <a-entity id="box1"
-                geometry="primitive: box; width: 0.5; height: 0.5; depth: 0.5"
+                rotation="0 0 0">
+                <a-animation  attribute="rotation"
+                              dur="4000"
+                              begin="300"
+                              ease="ease-in-out"
+                              fill="forwards"
+                              to="0 360 360"
+                              repeat="indefinite">
+                </a-animation>
+      </a-entity>
+
+      <a-entity id="box3"
+                mixin="cube0_5"
                 material="color: #E65599; shader: flat"
-                position="1 1 0"
-                rotation="0 0 0"
-                ></a-entity>
+                position="1 1.5 0"
+                rotation="0 0 0">
+                <a-animation  attribute="rotation"
+                              dur="4000"
+                              begin="600"
+                              ease="ease-in-out"
+                              fill="forwards"
+                              to="0 360 360"
+                              repeat="indefinite">
+                </a-animation>
+      </a-entity>
 
       <a-camera position="0 0 3">
       </a-camera>
