@@ -8,7 +8,7 @@
     <script type="text/javascript" src="app.js"></script>
   </head>
   <body>
-    <a-scene>
+    <a-scene debug id="scene1">
 
       <a-assets>
         <a-mixin id="red" material="color: red"></a-mixin>
@@ -19,22 +19,14 @@
         <a-mixin id="text1" text="width: 14; value: TEST TEXT YO; color: #1F5C71; align: center"></a-mixin>
       </a-assets>
 
-      <!-- <a-entity light="type: ambient; color: #AFA; intensity: 0.5" ></a-entity> -->
-      <a-entity light="type: ambient; color: #CCC; intensity: 1.4" ></a-entity>
+      <a-camera position="0 0 3"></a-camera>
 
+      <a-entity light="type: ambient; color: #CCC; intensity: 1.4" ></a-entity>
 
       <a-entity mixin="text1"
                 text="value: Shoreditch offal VHS, iPhone cronut YOLO XOXO vinyl tousled direct trade synth cred. Tofu marfa kombucha bespoke shabby chic food truck man braid palo santo paleo woke schlitz. Pork belly bitters twee, normcore hella cornhole pug live-edge migas intelligentsia direct trade raclette. Williamsburg YOLO typewriter brunch vexillologist tbh deep v chia paleo everyday carry skateboard. Af before they sold out food truck pabst, truffaut vaporware quinoa vice man bun."
                 position="0 5 -9"
                 ></a-entity>
-      <!-- <a-entity mixin="text1"
-                position="0 3 -9"
-                ></a-entity>
-      <a-entity mixin="text1"
-                position="0 4 -9"
-                ></a-entity> -->
-
-
 
       <!-- WALLLS -->
       <!-- WALLLS -->
@@ -85,54 +77,56 @@
       <!-- WALLS -->
       <!-- WALLS -->
 
+      <!-- OBJECTS -->
+      <!-- OBJECTS -->
+      <!-- OBJECTS -->
+          <a-entity id="box1"
+                    mixin="cube0_5"
+                    material="color: #E65502; shader: flat"
+                    position="-1 0.5 0"
+                    rotation="0 0 0">
+                    <a-animation  attribute="rotation"
+                                  dur="4000"
+                                  delay="0"
+                                  ease="ease-in-out"
+                                  fill="forwards"
+                                  to="0 360 360"
+                                  repeat="indefinite">
+                    </a-animation>
+          </a-entity>
 
-      <a-entity id="box1"
-                mixin="cube0_5"
-                material="color: #E65502; shader: flat"
-                position="-1 0.5 0"
-                rotation="0 0 0">
-                <a-animation  attribute="rotation"
-                              dur="4000"
-                              begin="0"
-                              ease="ease-in-out"
-                              fill="forwards"
-                              to="0 360 360"
-                              repeat="indefinite">
-                </a-animation>
-      </a-entity>
+          <a-entity id="box2"
+                    mixin="cube0_5"
+                    material="color: #E65562; shader: flat"
+                    position="0 1 0"
+                    rotation="0 0 0">
+                    <a-animation  attribute="rotation"
+                                  dur="4000"
+                                  delay="300"
+                                  ease="ease-in-out"
+                                  fill="forwards"
+                                  to="0 360 360"
+                                  repeat="indefinite">
+                    </a-animation>
+          </a-entity>
 
-      <a-entity id="box2"
-                mixin="cube0_5"
-                material="color: #E65562; shader: flat"
-                position="0 1 0"
-                rotation="0 0 0">
-                <a-animation  attribute="rotation"
-                              dur="4000"
-                              begin="300"
-                              ease="ease-in-out"
-                              fill="forwards"
-                              to="0 360 360"
-                              repeat="indefinite">
-                </a-animation>
-      </a-entity>
-
-      <a-entity id="box3"
-                mixin="cube0_5"
-                material="color: #E65599; shader: flat"
-                position="1 1.5 0"
-                rotation="0 0 0">
-                <a-animation  attribute="rotation"
-                              dur="4000"
-                              begin="600"
-                              ease="ease-in-out"
-                              fill="forwards"
-                              to="0 360 360"
-                              repeat="indefinite">
-                </a-animation>
-      </a-entity>
-
-      <a-camera position="0 0 3">
-      </a-camera>
+          <a-entity id="box3"
+                    mixin="cube0_5"
+                    material="color: #E65599; shader: flat"
+                    position="1 1.5 0"
+                    rotation="0 0 0">
+                    <a-animation  attribute="rotation"
+                                  dur="4000"
+                                  delay="600"
+                                  ease="ease-in-out"
+                                  fill="forwards"
+                                  to="0 360 360"
+                                  repeat="indefinite">
+                    </a-animation>
+          </a-entity>
+      <!-- OBJECTS -->
+      <!-- OBJECTS -->
+      <!-- OBJECTS -->
 
     </a-scene>
   </body>

@@ -7,6 +7,21 @@ aqua #53C5C6
 mustard #CEC504
 salmon #E65562
 
+
+A-Frame has APIs that represents each piece of ECS:
+
+Entities are represented by the <a-entity> element and prototype.
+
+Components are represented by HTML attributes on <a-entity>‘s.
+  Underneath, components are objects containing a schema, lifecycle handlers, and methods.
+  Components are registered via the AFRAME.registerComponent (name, definition) API.
+
+Systems are represented by <a-scene>‘s HTML attributes.
+  System are similar to components in definition.
+  Systems are registered via the AFRAME.registerSystem (name, definition) API.
+
+
+
 <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
 
 
