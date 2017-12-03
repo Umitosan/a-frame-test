@@ -10,15 +10,12 @@ $ git clone https://github.com/Umitosan/a-frame-test
 ```
 $ npm install
 ```
-
 ## start the server
-* use Node to start the local server
-* http-server [path] [options]
-* example for starting the server at http://localhost:1234 (aka http://127.0.0.0:1234)
+* The npm start script is configured to start a local server and open it here http://localhost:1234
+* simply run the following command and your browser should open automatically
 ```
-$ http-server -p 1234
+$ npm start
 ```
-
 ## dependencies
 * Node
 * jquery

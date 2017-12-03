@@ -1,6 +1,5 @@
 
 
-
 function makeBoxes(total) {
   for (var i=0; i<(2*total) ;i+=2) {
     var xPos = i-total;
