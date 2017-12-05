@@ -16,19 +16,21 @@
         <a-mixin id="green" material="color: green"></a-mixin>
         <a-mixin id="cube0_5" geometry="primitive: box; width: 0.5; height: 0.5; depth: 0.5"></a-mixin>
         <a-mixin id="cube1" geometry="primitive: box; width: 1; height: 1; depth: 1"></a-mixin>
-        <a-mixin id="text1" text="width: 14; value: TEST TEXT YO; color: #1F5C71; align: center"></a-mixin>
-        <a-mixin id="animSpin1" attribute="rotation" dur="4000" delay="0" ease="ease-in-out-sine" fill="forwards" to="0 360 360" repeat="indefinite"></a-mixin>
-        <a-mixin id="animSlide" attribute="position" dur="4000" delay="0" ease="linear" fill="forwards" repeat="indefinite"></a-mixin>
+        <a-mixin id="sphere1" geometry="primitive: sphere; radius: 0.80">
+        <a-mixin id="text1" text="width: 14; color: #1F5C71; align: center"></a-mixin>
+        <a-mixin id="textHelper" text="value: orbit helper; width: 6; color: black; align: center; side: front">
+        <a-mixin id="animSpin1" attribute="rotation" dur="4000" delay="0" ease="ease-in-out-sine" fill="both" to="0 360 360" repeat="indefinite"></a-mixin>
+        <a-mixin id="animSlide" attribute="position" dur="4000" delay="0" ease="linear" fill="both" repeat="indefinite"></a-mixin>
       </a-assets>
 
-      <a-camera position="0 0 3"></a-camera>
+      <a-camera position="-5 0 9" rotation="0 -27 0"></a-camera>
 
       <a-entity light="type: ambient; color: #CCC; intensity: 1.4" ></a-entity>
 
       <a-entity mixin="text1"
                 text="value: Shoreditch offal VHS, iPhone cronut YOLO XOXO vinyl tousled direct trade synth cred. Tofu marfa kombucha bespoke shabby chic food truck man braid palo santo paleo woke schlitz. Pork belly bitters twee, normcore hella cornhole pug live-edge migas intelligentsia direct trade raclette. Williamsburg YOLO typewriter brunch vexillologist tbh deep v chia paleo everyday carry skateboard. Af before they sold out food truck pabst, truffaut vaporware quinoa vice man bun."
-                position="0 5 -9"
-                ></a-entity>
+                position="0 5 -9">
+                </a-entity>
 
       <!-- WALLLS -->
       <!-- WALLLS -->
@@ -51,7 +53,6 @@
                 position="-5 10 -10"
                 material="side: double; color: #CEC504"
                 rotation="0 0 0">
-                <!-- <a-animation mixin="animSlide" from="-5 10 -10" to="-5 10 -13"></a-animation> -->
                 </a-entity>
       <a-entity id="wall-left2"
                 geometry="primitive: plane; height: 20; width: 20"
@@ -70,7 +71,6 @@
                 position="5 10 -10"
                 material="side: double; color: #91A351"
                 rotation="0 0 0">
-                <!-- <a-animation mixin="animSlide" from="5 10 -10" to="5 10 -13"></a-animation> -->
                 </a-entity>
       <a-entity id="wall-right2"
                 geometry="primitive: plane; height: 20; width: 20"
@@ -94,7 +94,7 @@
       <a-entity id="box1"
                 mixin="cube0_5"
                 material="color: #E65502; shader: flat"
-                position="-1 0.5 0"
+                position="-1 0.5 -4"
                 rotation="0 0 0">
                 <a-animation  mixin="animSpin1" delay="0"></a-animation>
       </a-entity>
@@ -102,17 +102,35 @@
       <a-entity id="box2"
                 mixin="cube0_5"
                 material="color: #E65562; shader: flat"
-                position="0 1 0"
+                position="0 1 -4"
                 rotation="0 0 0">
-                <a-animation  mixin="animSpin1" delay="300"></a-animation>
+                <a-animation  mixin="animSpin1" delay="100"></a-animation>
       </a-entity>
 
       <a-entity id="box3"
                 mixin="cube0_5"
                 material="color: #E65599; shader: flat"
-                position="1 1.5 0"
+                position="1 1.5 -4"
                 rotation="0 0 0">
-                <a-animation  mixin="animSpin1" delay="600"></a-animation>
+                <a-animation  mixin="animSpin1" delay="200"></a-animation>
+      </a-entity>
+
+      <a-entity id="orbitHelper"
+                geometry="primitive: box; width: 2; height: 2; depth: 2; position: 0 0 0; rotation: 0 0 0"
+                material="color: #FFFFFF; transparent: true; opacity: 0.5">
+                <a-animation id="anim360" attribute="rotation" dur="4000" delay="0" ease="linear"  fill="forwards" from="0 0 0" to="0 360 0" repeat="indefinite"></a-animation>
+
+                <a-entity mixin="textHelper" position="0 0.5 -1" rotation="0 0 0"></a-entity>
+                <a-entity mixin="textHelper" position="-1 0.5 0" rotation="0 90 0"></a-entity>
+                <a-entity mixin="textHelper" position="0 0.5 1" rotation="0 180 0"></a-entity>
+                <a-entity mixin="textHelper" position="1 0.5 0" rotation="0 270 0"></a-entity>
+
+                <a-entity id="sphereTest"
+                          mixin="sphere1"
+                          position="-5 3 -3"
+                          material="color: #E65502; shader: flat; transparency: true; opacity: 0.5">
+                </a-entity>
+
       </a-entity>
       <!-- OBJECTS -->
       <!-- OBJECTS -->
