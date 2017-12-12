@@ -127,7 +127,7 @@
       <a-entity id="orbitHelper"
                 geometry="primitive: box; width: 2; height: 2; depth: 2; position: 0 0 0; rotation: 0 0 0"
                 material="color: #FFFFFF; transparent: true; opacity: 0.2">
-                <a-animation id="anim360" attribute="rotation" dur="6000" delay="100" fill="forwards" from="0 0 0" to="0 360 0" repeat="indefinite"></a-animation>
+                <a-animation id="anim360" attribute="rotation" dur="6000" delay="100" fill="forwards" from="0 0 0" to="0 360 0" direction="alternate" repeat="indefinite"></a-animation>
 
                 <a-entity mixin="textHelper" position="0 0.5 -1" rotation="0 0 0"></a-entity>
                 <a-entity mixin="textHelper" position="-1 0.5 0" rotation="0 90 0"></a-entity>

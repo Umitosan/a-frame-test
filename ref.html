@@ -12,6 +12,13 @@ dark aqua2 #296263
 mustard #CEC504
 salmon #E65562
 
+Random Hex Color gen
+var randColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+(sometimes returns invalid hex value with only 5 chars)
+(simply add a 0 to the end of the string to bandaid this)
+if (randColor.length < 7) {
+  randColor = randColor + '0';
+}
 
 
 
